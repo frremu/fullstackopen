@@ -1,0 +1,23 @@
+title Sequence Diagram of New_note
+
+User->Browser: User clicks SUBMIT 
+Browser->Server: request made HTTP POST new_note
+Server-->Browser: redirects HTTP status code 302 to /notes
+Browser->Server: HTTP GET notes
+Server-->Browser: html code
+Browser->Server: HTTP GET main.css
+Server-->Browser: main.css
+Browser->Server:  HTTP GET main.js
+Server-->Browser: main.js
+
+note over Browser
+main.js executes and requests JSON file that keeps raw data of notes 
+end note 
+
+Browser->Server: HTTP GET data.JSON
+Server-->Browser: data.JSON
+
+note over Browser
+Browser executes event handler which The server creates a new note object, and adds it to an array called notes.
+
+
