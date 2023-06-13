@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant User
+    participant Browser
+    participant Server
+    
+    User->>+Browser: Navigates to page
+    Browser->>+Server: Sends request
+    Server-->>-Browser: Returns page content
+    User->>+Browser: Enters note content
+    Browser->>+Server: Sends note creation request
+    Server-->>-Browser: Creates and stores the note
+    Server-->>-Browser: Returns success response
+    User-->>-Browser: Sees success response
