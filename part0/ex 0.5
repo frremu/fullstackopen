@@ -9,5 +9,32 @@ sequenceDiagram
     User->>+Browser: Enters note content
     Browser->>+Server: Sends note creation request
     Server-->>-Browser: Creates and stores the note
-    Server-->>-Browser: Returns success response
-    User-->>-Browser: Sees success response
+    Server-->>+Browser: Returns success response
+    Browser-->>User: Sees success response
+
+    
+    
+    
+    
+    
+    User                    Browser                   Server
+ |                          |                          |
+ |---Navigates to page----->|                          |
+ |                          |                          |
+ |                          |---Sends request--------->|
+ |                          |                          |
+ |                          |<--Returns page content---|
+ |                          |                          |
+ |---Enters note content--->|                          |
+ |                          |                          |
+ |                          |---Sends note creation--->|
+ |                          |------request------------>|
+ |                          |                          |
+ |                          |<--Creates and stores-----|
+ |                          |--------the note----------|
+ |                          |                          |
+ |                          |<----Returns success------|
+ |                          |--------response----------|
+ |<------Sees success-------|                          |
+ |--------response----------|                          |
+
