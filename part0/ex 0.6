@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant User
+    participant Browser
+    participant App
+    participant Server
+    
+    User->>+Browser: Opens the single-page app
+    Browser->>+App: Loads the app
+    User->>+App: Interacts with the app (creates a new note)
+    App->>+Server: Sends note creation request
+    Server-->>-App: Processes the request, creates and stores the note
+    Server-->>+App: Returns success response
+    App-->>-Browser: Updates the UI with success message
